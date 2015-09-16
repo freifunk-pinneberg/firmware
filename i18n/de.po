@@ -24,6 +24,7 @@ msgstr ""
 "schicke dazu diesen Schlüssel und den Namen deines Knotens "
 "(<em><%=hostname%></em>) an "
 "<a href=\"mailto:keys@freifunk-pinneberg.de\">keys@freifunk-pinneberg.de</a>."
+"Nach versenden der E-Mail kann es mitunter ein paar Stunden dauern bis dein Knoten sich verbindet."
 
 msgid "gluon-config-mode:reboot"
 msgstr ""
