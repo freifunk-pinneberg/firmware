@@ -22,7 +22,7 @@ build-essential git subversion python gawk unzip libssl-dev zlib1g-dev libncurse
     make -j10 GLUON_TARGET=ar71xx-generic
 
 Über den Parameter **j** passt man die anzahl der Threads an. Es empfiehlt sich hier so viele anzugeben wie die CPU Kerne hat.
-Über **GLUON_TARGET** definiert man die Zielplatform, möglich angaben sind derzeit.
+Über **GLUON_TARGET** definiert man die Zielplatform, möglich Angaben sind derzeit:
 
 * ar71xx-generic - Fast alle Router
 * mpc85xx-generic - TLWDR4900
