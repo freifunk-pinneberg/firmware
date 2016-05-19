@@ -1,5 +1,8 @@
 # Freifunk Pinneberg Firmware
 
+## Fertige Downloads
+Wenn du unsere Firmware einfach nur nutzen möchtest, empfihelt sich der Download der fertigen Binärdateien. Folge dazu einfach den Anweisungen auf unserer [Download Seite](https://pinneberg.freifunk.net/download.html)
+
 ## Selbst bauen
 
 ### Benötigte Software
