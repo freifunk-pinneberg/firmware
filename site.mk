@@ -102,7 +102,7 @@ GLUON_SITE_PACKAGES += \
     $(USB_PACKAGES_BASIC) \
     $(USB_PACKAGES_STORAGE)
 endif
-DEFAULT_GLUON_RELEASE := 0.8-beta1
+DEFAULT_GLUON_RELEASE := 0.8-beta2
 
 
 # Allow overriding the release number from the command line
