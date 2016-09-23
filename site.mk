@@ -104,6 +104,11 @@ GLUON_SITE_PACKAGES += \
 endif
 DEFAULT_GLUON_RELEASE := 0.8-beta1
 
+# Mesh for ATH10K Devices
+GLUON_ATH10K_MESH = ibss
+
+# Some devices (at the moment the TP-Link Archer C7) contain a region code that restricts firmware installations.
+GLUON_REGION = eu
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
