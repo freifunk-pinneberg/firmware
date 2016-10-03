@@ -102,7 +102,7 @@ GLUON_SITE_PACKAGES += \
     $(USB_PACKAGES_BASIC) \
     $(USB_PACKAGES_STORAGE)
 endif
-DEFAULT_GLUON_RELEASE := 0.8-beta3
+DEFAULT_GLUON_RELEASE := 0.8
 
 
 # Allow overriding the release number from the command line
@@ -113,4 +113,4 @@ GLUON_PRIORITY ?= 0
 GLUON_LANGS ?= en de
 
 # Enable autoupdater
-GLUON_BRANCH := beta
+GLUON_BRANCH := stable
