@@ -13,9 +13,9 @@ build-essential git subversion python gawk unzip libssl-dev zlib1g-dev libncurse
     git clone https://github.com/freifunk-gluon/gluon.git
     git clone https://github.com/freifunk-pinneberg/firmware.git gluon/site
     cd gluon/site
-    git checkout v0.8
+    git checkout v0.9
     cd ..
-    git checkout v2016.1.6
+    git checkout v2016.2.4
 
 ### Firmware bauen
     make update
