@@ -110,6 +110,10 @@ GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 GLUON_PRIORITY ?= 0
 
+GLUON_REGION ?= eu
+
+GLUON_ATH10K_MESH ?= ibss
+
 GLUON_LANGS ?= en de
 
 # Enable autoupdater
