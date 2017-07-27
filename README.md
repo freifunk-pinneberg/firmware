@@ -20,7 +20,7 @@ Unter Debian ist das beispielsweise:
 
 ### Firmware bauen
     make update
-    make -j10 GLUON_TARGET=ar71xx-generic
+    make -j10 GLUON_TARGET=ar71xx-generic GLUON_BRANCH=stable
 
 Über den Parameter **j** passt man die anzahl der Threads an. Es empfiehlt sich hier so viele anzugeben wie die CPU Kerne hat.
 Über **GLUON_TARGET** definiert man die Zielplattform, möglich Angaben sind derzeit:
@@ -28,6 +28,10 @@ Unter Debian ist das beispielsweise:
 * ar71xx-generic - Fast alle Router
 * mpc85xx-generic - TLWDR4900
 * ar71xx-nand - WNDR4300
+* brcm2708-bcm2708 - Raspberry 1
+* brcm2708-bcm2709 - Raspberry 2
 * x86-generic - Klassischer PC (32bit)
 * x86-64 - Klassischer PC (64bit)
 * x86-kvm_guest - Viretuelle Maschienen
+
+Die Angabe von **GLUON_BRANCH** bewirkt, daß der Autoupdater aktiviert wird.
