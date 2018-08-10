@@ -14,9 +14,9 @@ Unter Debian ist das beispielsweise:
     git clone https://github.com/freifunk-gluon/gluon.git
     git clone https://github.com/freifunk-pinneberg/firmware.git gluon/site
     cd gluon/site
-    git checkout v0.9
+    git checkout v0.10
     cd ..
-    git checkout v2016.2.6
+    git checkout v2018.1.1
 
 ### Firmware bauen
     make update
