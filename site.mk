@@ -18,7 +18,6 @@ GLUON_SITE_PACKAGES := \
     gluon-web-private-wifi \
     gluon-web-node-role  \
     gluon-mesh-vpn-fastd \
-    gluon-radvd \
     gluon-setup-mode \
     gluon-status-page \
     iwinfo \
@@ -148,6 +147,8 @@ GLUON_ATH10K_MESH ?= ibss
 GLUON_WLAN_MESH ?= ibss
 
 GLUON_LANGS ?= en de
+
+GLUON_DEBUG ?= 0
 
 # Controls whether images for deprecated devices (small flash) should be built
 # 0, upgrade, full

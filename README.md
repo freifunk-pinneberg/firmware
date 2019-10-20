@@ -16,7 +16,7 @@ Unter Debian ist das beispielsweise:
     cd gluon/site
     git checkout v0.10
     cd ..
-    git checkout v2018.1.1
+    git checkout v2019.1.1
 
 ### Firmware bauen
     make update
