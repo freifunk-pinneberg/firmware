@@ -119,7 +119,8 @@ GLUON_SITE_PACKAGES += \
     $(USB_PACKAGES_BASIC) \
     $(USB_PACKAGES_3G) \
     $(USB_PACKAGES_STORAGE) \
-    $(USB_X86_GENERIC_NETWORK_MODULES)
+    $(USB_X86_GENERIC_NETWORK_MODULES) \
+    $(USB_PACKAGES_GPS)
 endif
 
 # x86-64
@@ -128,7 +129,9 @@ GLUON_SITE_PACKAGES += \
     $(USB_PACKAGES_HID) \
     $(USB_PACKAGES_BASIC) \
     $(USB_PACKAGES_3G) \
-    $(USB_PACKAGES_STORAGE)
+    $(USB_PACKAGES_STORAGE) \
+    $(USB_X86_GENERIC_NETWORK_MODULES) \
+    $(USB_PACKAGES_GPS)
 endif
 
 DEFAULT_GLUON_RELEASE := 0.10-exp$(shell date '+%Y%m%d')
@@ -142,6 +145,10 @@ GLUON_REGION ?= eu
 
 GLUON_ATH10K_MESH ?= ibss
 
-GLUON_WLAN_MESH=ibss
+GLUON_WLAN_MESH ?= ibss
 
 GLUON_LANGS ?= en de
+
+# Controls whether images for deprecated devices (small flash) should be built
+# 0, upgrade, full
+GLUON_DEPRECATED ?= full
