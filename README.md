@@ -14,7 +14,7 @@ Unter Debian ist das beispielsweise:
     git clone https://github.com/freifunk-gluon/gluon.git
     git clone https://github.com/freifunk-pinneberg/firmware.git gluon/site
     cd gluon/site
-    git checkout v0.10
+    git checkout v0.11
     cd ..
     git checkout v2019.1.1
 
