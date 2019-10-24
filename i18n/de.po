@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
-"Project-Id-Version: FFPI 1.0\n"
-"PO-Revision-Date: 2016-05-02 08:41+0100\n"
+"Project-Id-Version: FFPI 1.2\n"
+"PO-Revision-Date: 2017-07-23 11:06+0100\n"
 "Last-Translator: Thomas Hooge <thomas@hoogi.de>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -44,6 +44,9 @@ msgstr ""
 msgid "gluon-luci-node-role:role:node"
 msgstr "Normaler Knoten"
 
+msgid "gluon-luci-node-role:role:temp"
+msgstr "Knoten nicht 24/7 verfügbar"
+
 msgid "gluon-luci-node-role:role:mobile"
 msgstr "Mobiler Knoten"
 
@@ -55,3 +58,6 @@ msgstr "Knoten für Dienste"
 
 msgid "gluon-luci-node-role:role:test"
 msgstr "Knoten für Tests"
+
+msgid "gluon-luci-node-role:role:hidden"
+msgstr "Unsichtbarer Knoten"
