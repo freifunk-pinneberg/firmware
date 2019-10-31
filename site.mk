@@ -27,7 +27,8 @@ GLUON_SITE_PACKAGES := \
 # basic support for USB stack
 USB_PACKAGES_BASIC := \
     kmod-usb-core \
-    kmod-usb2
+    kmod-usb2 \
+    kmod-usb3
 
 # support for USB UMTS/3G devices
 USB_PACKAGES_3G := \
@@ -96,6 +97,15 @@ USB_X86_GENERIC_NETWORK_MODULES := \
 	kmod-via-velocity \
 	kmod-forcedeth
 
+# AMD APU2 Offloader https://openwrt.org/toh/pcengines/apu2#kernel_modules
+APU2_SUPPORT := \
+    kmod-leds-apu2 \
+    kmod-leds-gpio \
+    kmod-crypto-hw-ccp \
+    kmod-gpio-nct5104d \
+    kmod-gpio-button-hotplug \
+    kmod-sp5100_tco
+
 # ar71xx-generic
 GLUON_ARCHERC7_SITE_PACKAGES := $(USB_PACKAGES_BASIC)
 GLUON_GLINET_SITE_PACKAGES := $(USB_PACKAGES_BASIC)
@@ -130,10 +140,12 @@ GLUON_SITE_PACKAGES += \
     $(USB_PACKAGES_3G) \
     $(USB_PACKAGES_STORAGE) \
     $(USB_X86_GENERIC_NETWORK_MODULES) \
-    $(USB_PACKAGES_GPS)
+    $(USB_PACKAGES_GPS) \
+    $(APU2_SUPPORT)
 endif
 
 DEFAULT_GLUON_RELEASE := 0.11-exp$(shell date '+%Y%m%d')
+GLUON_BRANCH ?= stable
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
