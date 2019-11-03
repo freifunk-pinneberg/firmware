@@ -7,7 +7,6 @@ GLUON_SITE_PACKAGES := \
     gluon-config-mode-contact-info \
     gluon-config-mode-core \
     gluon-config-mode-geo-location \
-    gluon-config-mode-geo-location-osm \
     gluon-config-mode-hostname \
     gluon-config-mode-mesh-vpn \
     gluon-ebtables-filter-multicast \
@@ -105,7 +104,12 @@ APU2_SUPPORT := \
     kmod-crypto-hw-ccp \
     kmod-gpio-nct5104d \
     kmod-gpio-button-hotplug \
-    kmod-sp5100_tco
+    kmod-sp5100_tco \
+    kmod-usb-ohci \
+    kmod-sound-core \
+    kmod-pcspkr \
+    irqbalance \
+    fstrim
 
 # ar71xx-generic
 GLUON_ARCHERC7_SITE_PACKAGES := $(USB_PACKAGES_BASIC)
