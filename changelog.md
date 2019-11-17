@@ -1,5 +1,7 @@
+* Add Packages for PC Engines APU2 platform
+* Update site.conf for Gluon 2019.1
 * Add some packages for usb network to x86 targets
-* Update site.con for gluon 2018.1
+* Update site.conf for gluon 2018.1
 
 # 17.07.2017
 * 3G packages for some nodes with usb port(s)
