@@ -154,7 +154,7 @@ endif
 
 GLUON_MULTIDOMAIN = 1
 
-DEFAULT_GLUON_RELEASE := 0.11-exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.11.1-exp$(shell date '+%Y%m%d')
 GLUON_BRANCH ?= stable
 
 # Allow overriding the release number from the command line
