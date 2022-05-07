@@ -8,7 +8,6 @@ GLUON_SITE_PACKAGES := \
     gluon-config-mode-core \
     gluon-config-mode-geo-location \
     gluon-config-mode-hostname \
-    gluon-config-mode-domain-select \
     gluon-config-mode-mesh-vpn \
     gluon-ebtables-filter-multicast \
     gluon-ebtables-filter-ra-dhcp \
@@ -152,7 +151,6 @@ GLUON_SITE_PACKAGES += \
     htop
 endif
 
-GLUON_MULTIDOMAIN = 1
 
 DEFAULT_GLUON_RELEASE := 0.11.1-exp$(shell date '+%Y%m%d')
 GLUON_BRANCH ?= stable
