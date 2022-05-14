@@ -14,9 +14,9 @@ Unter Debian ist das beispielsweise:
     git clone https://github.com/freifunk-gluon/gluon.git
     git clone https://github.com/freifunk-pinneberg/firmware.git gluon/site
     cd gluon/site
-    git checkout v0.11
+    git checkout v0.11.2
     cd ..
-    git checkout v2019.1.1
+    git checkout 250b623fb4a1bc2d6e0b91809385b8aaa1a4b5d5
 
 ### Firmware bauen
     make update
@@ -25,12 +25,13 @@ Unter Debian ist das beispielsweise:
 Über den Parameter **j** passt man die anzahl der Threads an. Es empfiehlt sich hier so viele anzugeben wie die CPU Kerne hat.
 Über **GLUON_TARGET** definiert man die Zielplattform, möglich Angaben sind derzeit:
 
+
 * ar71xx-generic - Fast alle TP-Link & ubnt Router
-* ar71xx-tiny
-* ar71xx-nand - WNDR4300
+* ar71xx-tiny - Geräte mit sehr wenig RAM (z.b. TP-LINK WR841N(D))
+* ar71xx-nand
 * brcm2708-bcm2708 - Raspberry 1
 * brcm2708-bcm2709 - Raspberry 2
-* mpc85xx-generic - TLWDR4900
+* mpc85xx-generic - z.b. TLWDR4900
 * mpc85xx-p1020
 * ramips-mt7621
 * sunxi-cortexa7
@@ -38,4 +39,17 @@ Unter Debian ist das beispielsweise:
 * x86-geode - Klassischer PC (AMD Geode CPU)
 * x86-64 - Klassischer PC (64bit)
 
-Die Angabe von **GLUON_BRANCH** bewirkt, daß der Autoupdater aktiviert wird.
+Die Angabe von **GLUON_BRANCH** bewirkt, daß der Autoupdater für die angegeben Branch aktiviert wird.
+
+Das Bauen kann man mit einem kleinen bash Script auch in einem rutsch erledigen.  
+build.sh
+```
+#!/bin/bash
+
+for TARGET in $(make list-targets); do
+  make -j10 GLUON_TARGET=$TARGET GLUON_BRANCH=stable
+  make clean GLUON_TARGET=$TARGET
+done 
+
+make manifest GLUON_BRANCH=stable
+```
