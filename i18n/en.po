@@ -37,23 +37,23 @@ msgstr ""
 "<a href=\"https://pinneberg.freifunk.net/\">our homepage</a>.</p>"
 "<p>Have fun with your node and exploring the Freifunk network!</p>"
 
-msgid "gluon-luci-node-role:role:node"
+msgid "gluon-web-node-role:role:node"
 msgstr "Normal Node"
 
-msgid "gluon-luci-node-role:role:temp"
+msgid "gluon-web-node-role:role:temp"
 msgstr "Node not available 24/7"
 
-msgid "gluon-luci-node-role:role:mobile"
+msgid "gluon-web-node-role:role:mobile"
 msgstr "Mobile Node"
 
-msgid "gluon-luci-node-role:role:offloader"
+msgid "gluon-web-node-role:role:offloader"
 msgstr "VPN Offloader"
 
-msgid "gluon-luci-node-role:role:service"
+msgid "gluon-web-node-role:role:service"
 msgstr "Service Node"
 
-msgid "gluon-luci-node-role:role:test"
+msgid "gluon-web-node-role:role:test"
 msgstr "Test Node"
 
-msgid "gluon-luci-node-role:role:hidden"
+msgid "gluon-web-node-role:role:hidden"
 msgstr "Hidden Node"

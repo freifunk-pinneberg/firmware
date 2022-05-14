@@ -11,15 +11,13 @@ GLUON_SITE_PACKAGES := \
     gluon-config-mode-mesh-vpn \
     gluon-ebtables-filter-multicast \
     gluon-ebtables-filter-ra-dhcp \
-    gluon-luci-admin \
-    gluon-luci-autoupdater \
-    gluon-luci-portconfig \
-    gluon-luci-wifi-config \
-    gluon-luci-private-wifi \
-    gluon-luci-node-role  \
-    gluon-next-node \
+    gluon-web-admin \
+    gluon-web-autoupdater \
+    gluon-web-network \
+    gluon-web-wifi-config \
+    gluon-web-private-wifi \
+    gluon-web-node-role  \
     gluon-mesh-vpn-fastd \
-    gluon-radvd \
     gluon-setup-mode \
     gluon-status-page \
     iwinfo \
@@ -29,7 +27,8 @@ GLUON_SITE_PACKAGES := \
 # basic support for USB stack
 USB_PACKAGES_BASIC := \
     kmod-usb-core \
-    kmod-usb2
+    kmod-usb2 \
+    kmod-usb3
 
 # support for USB UMTS/3G devices
 USB_PACKAGES_3G := \
@@ -72,6 +71,46 @@ USB_PACKAGES_STORAGE := \
     kmod-nls-utf8 \
     swap-utils
 
+# support for USB tethering
+USB_PACKAGES_TETHERING := \
+	kmod-usb-net \
+	kmod-usb-net-asix \
+	kmod-usb-net-dm9601-ether
+
+USB_X86_GENERIC_NETWORK_MODULES := \
+	kmod-usb-ohci-pci \
+	kmod-sky2 \
+	kmod-atl2 \
+	kmod-igb \
+	kmod-3c59x \
+	kmod-e100 \
+	kmod-e1000 \
+	kmod-e1000e \
+	kmod-natsemi \
+	kmod-ne2k-pci \
+	kmod-pcnet32 \
+	kmod-8139too \
+	kmod-r8169 \
+	kmod-sis900 \
+	kmod-tg3 \
+	kmod-via-rhine \
+	kmod-via-velocity \
+	kmod-forcedeth
+
+# AMD APU2 Offloader https://openwrt.org/toh/pcengines/apu2#kernel_modules
+APU2_SUPPORT := \
+    kmod-leds-apu2 \
+    kmod-leds-gpio \
+    kmod-crypto-hw-ccp \
+    kmod-gpio-nct5104d \
+    kmod-gpio-button-hotplug \
+    kmod-sp5100_tco \
+    kmod-usb-ohci \
+    kmod-sound-core \
+    kmod-pcspkr \
+    irqbalance \
+    fstrim
+
 # ar71xx-generic
 GLUON_ARCHERC7_SITE_PACKAGES := $(USB_PACKAGES_BASIC)
 GLUON_GLINET_SITE_PACKAGES := $(USB_PACKAGES_BASIC)
@@ -92,7 +131,11 @@ ifeq ($(GLUON_TARGET),x86-generic)
 GLUON_SITE_PACKAGES += \
     $(USB_PACKAGES_HID) \
     $(USB_PACKAGES_BASIC) \
-    $(USB_PACKAGES_STORAGE)
+    $(USB_PACKAGES_3G) \
+    $(USB_PACKAGES_STORAGE) \
+    $(USB_X86_GENERIC_NETWORK_MODULES) \
+    $(USB_PACKAGES_GPS) \
+    htop
 endif
 
 # x86-64
@@ -100,10 +143,19 @@ ifeq ($(GLUON_TARGET),x86-64)
 GLUON_SITE_PACKAGES += \
     $(USB_PACKAGES_HID) \
     $(USB_PACKAGES_BASIC) \
-    $(USB_PACKAGES_STORAGE)
+    $(USB_PACKAGES_3G) \
+    $(USB_PACKAGES_STORAGE) \
+    $(USB_X86_GENERIC_NETWORK_MODULES) \
+    $(USB_PACKAGES_GPS) \
+    $(APU2_SUPPORT) \
+    htop
 endif
 
-DEFAULT_GLUON_RELEASE := 0.9.1
+
+DEFAULT_GLUON_RELEASE := 0.11.2
+
+# Enable autoupdater
+GLUON_BRANCH ?= stable
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
@@ -114,7 +166,12 @@ GLUON_REGION ?= eu
 
 GLUON_ATH10K_MESH ?= ibss
 
+GLUON_WLAN_MESH ?= ibss
+
 GLUON_LANGS ?= en de
 
-# Enable autoupdater
-GLUON_BRANCH := stable
+GLUON_DEBUG ?= 0
+
+# Controls whether images for deprecated devices (small flash) should be built
+# 0, upgrade, full
+GLUON_DEPRECATED ?= full

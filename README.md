@@ -14,9 +14,9 @@ Unter Debian ist das beispielsweise:
     git clone https://github.com/freifunk-gluon/gluon.git
     git clone https://github.com/freifunk-pinneberg/firmware.git gluon/site
     cd gluon/site
-    git checkout v0.9.1
+    git checkout v0.11
     cd ..
-    git checkout v2016.2.x
+    git checkout v2019.1.1
 
 ### Firmware bauen
     make update
@@ -25,13 +25,17 @@ Unter Debian ist das beispielsweise:
 Über den Parameter **j** passt man die anzahl der Threads an. Es empfiehlt sich hier so viele anzugeben wie die CPU Kerne hat.
 Über **GLUON_TARGET** definiert man die Zielplattform, möglich Angaben sind derzeit:
 
-* ar71xx-generic - Fast alle Router
-* mpc85xx-generic - TLWDR4900
+* ar71xx-generic - Fast alle TP-Link & ubnt Router
+* ar71xx-tiny
 * ar71xx-nand - WNDR4300
 * brcm2708-bcm2708 - Raspberry 1
 * brcm2708-bcm2709 - Raspberry 2
+* mpc85xx-generic - TLWDR4900
+* mpc85xx-p1020
+* ramips-mt7621
+* sunxi-cortexa7
 * x86-generic - Klassischer PC (32bit)
+* x86-geode - Klassischer PC (AMD Geode CPU)
 * x86-64 - Klassischer PC (64bit)
-* x86-kvm_guest - Viretuelle Maschienen
 
 Die Angabe von **GLUON_BRANCH** bewirkt, daß der Autoupdater aktiviert wird.
