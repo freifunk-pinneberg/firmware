@@ -46,6 +46,7 @@ build.sh
 ```
 #!/bin/bash
 
+make update
 for TARGET in $(make list-targets); do
   make -j10 GLUON_TARGET=$TARGET GLUON_BRANCH=stable
   make clean GLUON_TARGET=$TARGET
