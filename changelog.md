@@ -22,9 +22,8 @@
 
 # 0.8.0 (gluon-v2016.1.3)
 
-# 23.09.2016
-* Beta3
-
-# 19.05.2016
+# 0.7.1 (gluon-v2015.1.2)
 * Readme hinzugefügt
 * Changelog hinzugefügt
+
+# 0.7.0 (gluon-v2015.1.1)
