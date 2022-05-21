@@ -1,3 +1,6 @@
+* Add multidomain support with ibss and 802.11s
+* Add gluon-web-logging
+
 # 0.11.2 (gluon-v2019.1.3-5-g250b623f)
 * **This release fixes a critical security vulnerability in Gluon's autoupdater: [GHSA-xqhj-fmc7-f8mv](https://github.com/freifunk-gluon/gluon/security/advisories/GHSA-xqhj-fmc7-f8mv).**
 * Remove lost key from Michel

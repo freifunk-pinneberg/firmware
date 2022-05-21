@@ -9,6 +9,8 @@ GLUON_SITE_PACKAGES := \
     gluon-config-mode-geo-location \
     gluon-config-mode-hostname \
     gluon-config-mode-mesh-vpn \
+    gluon-config-mode-domain-select \
+    gluon-scheduled-domain-switch \
     gluon-ebtables-filter-multicast \
     gluon-ebtables-filter-ra-dhcp \
     gluon-web-admin \
@@ -18,6 +20,7 @@ GLUON_SITE_PACKAGES := \
     gluon-web-private-wifi \
     gluon-web-node-role  \
     gluon-mesh-vpn-fastd \
+    gluon-web-logging \
     gluon-setup-mode \
     gluon-status-page \
     iwinfo \
@@ -179,3 +182,6 @@ GLUON_DEBUG ?= 0
 # Controls whether images for deprecated devices (small flash) should be built
 # 0, upgrade, full
 GLUON_DEPRECATED ?= full
+
+# Multidomain support allows to build a single firmware with multiple, switchable domain configurations
+GLUON_MULTIDOMAIN=1
