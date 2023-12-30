@@ -41,6 +41,15 @@ msgstr ""
 "<a href=\"https://pinneberg.freifunk.net/\">unserer Webseite</a>.</p>"
 "<p>Viel Spaß mit deinem Knoten und der Erkundung von Freifunk!</p>"
 
+msgid "gluon-config-mode:domain-select"
+msgstr ""
+"Dein Knoten kann verschiedenen Domänen zugeordnet sein. "
+"Dies wird von uns unter anderem dazu genutzt Änderungen, welche nicht abwärtskompatibel sind, nach dem ausrollen der Firmware zu ändern. "
+"Du kannst dies in der Regel auf dem Standardwert belassen."
+
+msgid "gluon-config-mode:domain"
+msgstr "Domäne"
+
 msgid "gluon-web-node-role:role:node"
 msgstr "Normaler Knoten"
 
