@@ -154,17 +154,29 @@ GLUON_SITE_PACKAGES += \
     htop
 endif
 
-# This string is displayed and used by the autoupdater to decide if a newer version is available.
-DEFAULT_GLUON_RELEASE := 0.11.2
-
 # Enable autoupdater
 GLUON_BRANCH ?= stable
+
+# Which Version number do we have?
+GLUON_BASE_VERSION := 1.0.0
+
+# This string is displayed and used by the autoupdater to decide if a newer version is available.
+ifeq ($(GLUON_BRANCH),stable)
+    # Set DEFAULT_GLUON_RELEASE without date for stable branch
+    DEFAULT_GLUON_RELEASE := $(GLUON_BASE_VERSION)
+else ifeq ($(GLUON_BRANCH),beta)
+    # Beta version
+    DEFAULT_GLUON_RELEASE := $(GLUON_BASE_VERSION)-beta$(shell date '+%Y%m%d')
+else
+    # Set DEFAULT_GLUON_RELEASE with date for other branches
+    DEFAULT_GLUON_RELEASE := 1.0.0-exp$(shell date '+%Y%m%d')
+endif
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 # How many days until all router should be updated
-GLUON_PRIORITY ?= 0
+GLUON_PRIORITY ?= 3
 
 # Some devices contain a region code that restricts firmware installations.
 # Set to eu or us to make the resulting images installable from the respective stock firmware.
