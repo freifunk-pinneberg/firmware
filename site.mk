@@ -158,7 +158,7 @@ endif
 GLUON_BRANCH ?= stable
 
 # Which Version number do we have?
-GLUON_BASE_VERSION := 1.0.0
+GLUON_BASE_VERSION := 1.0.1
 
 # This string is displayed and used by the autoupdater to decide if a newer version is available.
 ifeq ($(GLUON_BRANCH),stable)
@@ -169,7 +169,7 @@ else ifeq ($(GLUON_BRANCH),beta)
     DEFAULT_GLUON_RELEASE := $(GLUON_BASE_VERSION)-beta$(shell date '+%Y%m%d')
 else
     # Set DEFAULT_GLUON_RELEASE with date for other branches
-    DEFAULT_GLUON_RELEASE := 1.0.0-exp$(shell date '+%Y%m%d')
+    DEFAULT_GLUON_RELEASE := $(GLUON_BASE_VERSION)-exp$(shell date '+%Y%m%d')
 endif
 
 # Allow overriding the release number from the command line
@@ -183,7 +183,7 @@ GLUON_PRIORITY ?= 3
 GLUON_REGION ?= eu
 
 # Setting this to 11s or ibss will enable generation of matching images for devices which don’t support both meshing modes
-GLUON_WLAN_MESH ?= ibss
+GLUON_WLAN_MESH ?= 11s
 
 # List of languages (as two-letter-codes) to be included in the web interface
 GLUON_LANGS ?= en de
