@@ -23,9 +23,9 @@ GLUON_SITE_PACKAGES := \
     gluon-web-logging \
     gluon-setup-mode \
     gluon-status-page \
+    respondd-module-airtime \
     iwinfo \
-    iptables \
-    haveged
+    iptables
 
 # basic support for USB stack
 USB_PACKAGES_BASIC := \
@@ -158,7 +158,7 @@ endif
 GLUON_BRANCH ?= stable
 
 # Which Version number do we have?
-GLUON_BASE_VERSION := 1.0.1
+GLUON_BASE_VERSION := 1.1.0
 
 # This string is displayed and used by the autoupdater to decide if a newer version is available.
 ifeq ($(GLUON_BRANCH),stable)
