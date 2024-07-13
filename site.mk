@@ -155,16 +155,17 @@ GLUON_SITE_PACKAGES += \
 endif
 
 # Enable autoupdater
-GLUON_BRANCH ?= stable
+GLUON_AUTOUPDATER_BRANCH ?= stable
+GLUON_AUTOUPDATER_ENABLED = 1
 
 # Which Version number do we have?
 GLUON_BASE_VERSION := 1.1.0
 
 # This string is displayed and used by the autoupdater to decide if a newer version is available.
-ifeq ($(GLUON_BRANCH),stable)
+ifeq ($(GLUON_AUTOUPDATER_BRANCH),stable)
     # Set DEFAULT_GLUON_RELEASE without date for stable branch
     DEFAULT_GLUON_RELEASE := $(GLUON_BASE_VERSION)
-else ifeq ($(GLUON_BRANCH),beta)
+else ifeq ($(GLUON_AUTOUPDATER_BRANCH),beta)
     # Beta version
     DEFAULT_GLUON_RELEASE := $(GLUON_BASE_VERSION)-beta$(shell date '+%Y%m%d')
 else
