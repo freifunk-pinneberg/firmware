@@ -1,5 +1,14 @@
+* Add Helgoland
+
+# 1.0.1 (gluon-v2019.1.3-5-g250b623f)
+* set 802.11s as default
+
+# 1.0.0 (gluon-v2019.1.3-5-g250b623f)
 * Add multidomain support with ibss and 802.11s
+* add gluon-scheduled-domain-switch
+* auto witsch to 802.11s on 23.02.2024 - 17:00 UTC+1
 * Add gluon-web-logging
+
 
 # 0.11.2 (gluon-v2019.1.3-5-g250b623f)
 * **This release fixes a critical security vulnerability in Gluon's autoupdater: [GHSA-xqhj-fmc7-f8mv](https://github.com/freifunk-gluon/gluon/security/advisories/GHSA-xqhj-fmc7-f8mv).**
