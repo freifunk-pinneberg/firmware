@@ -9,7 +9,7 @@ GLUON_SITE_PACKAGES := \
     gluon-config-mode-geo-location \
     gluon-config-mode-hostname \
     gluon-config-mode-mesh-vpn \
-    gluon-config-mode-domain-select \
+    gluon-hoodselector \
     gluon-scheduled-domain-switch \
     gluon-ebtables-filter-multicast \
     gluon-ebtables-filter-ra-dhcp \
@@ -177,7 +177,7 @@ endif
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 # How many days until all router should be updated
-GLUON_PRIORITY ?= 3
+GLUON_PRIORITY ?= 7
 
 # Some devices contain a region code that restricts firmware installations.
 # Set to eu or us to make the resulting images installable from the respective stock firmware.
@@ -194,7 +194,7 @@ GLUON_DEBUG ?= 0
 
 # Controls whether images for deprecated devices (small flash) should be built
 # 0, upgrade, full
-GLUON_DEPRECATED ?= full
+GLUON_DEPRECATED ?= upgrade
 
 # Multidomain support allows to build a single firmware with multiple, switchable domain configurations
 GLUON_MULTIDOMAIN=1
