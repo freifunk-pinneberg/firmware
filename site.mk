@@ -193,7 +193,7 @@ GLUON_DEBUG ?= 0
 
 # Controls whether images for deprecated devices (small flash) should be built
 # 0, upgrade, full
-GLUON_DEPRECATED ?= full
+GLUON_DEPRECATED ?= upgrade
 
 # Multidomain support allows to build a single firmware with multiple, switchable domain configurations
 GLUON_MULTIDOMAIN=1
