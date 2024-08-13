@@ -158,7 +158,7 @@ endif
 GLUON_BRANCH ?= stable
 
 # Which Version number do we have?
-GLUON_BASE_VERSION := 1.0.0
+GLUON_BASE_VERSION := 1.0.0+1
 
 # This string is displayed and used by the autoupdater to decide if a newer version is available.
 ifeq ($(GLUON_BRANCH),stable)
