@@ -9,7 +9,7 @@ GLUON_SITE_PACKAGES := \
     gluon-config-mode-geo-location \
     gluon-config-mode-hostname \
     gluon-config-mode-mesh-vpn \
-    gluon-hoodselector \
+    gluon-config-mode-domain-select \
     gluon-scheduled-domain-switch \
     gluon-ebtables-filter-multicast \
     gluon-ebtables-filter-ra-dhcp \
