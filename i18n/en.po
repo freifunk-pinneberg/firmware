@@ -39,9 +39,9 @@ msgstr ""
 
 msgid "gluon-config-mode:domain-select"
 msgstr ""
-"Your node can be assigned to various domains. "
-"This is used by us, among other things, to make changes that are not backward compatible after rolling out the firmware. "
-"You can usually leave this at the default value."
+"Your node can be assigned to different domains. "
+"If the node should be on Helgoland, select Helgoland."
+"Otherwise, leave it at Pinneberg."
 
 msgid "gluon-config-mode:domain"
 msgstr "Domain"
