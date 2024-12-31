@@ -159,7 +159,7 @@ GLUON_AUTOUPDATER_BRANCH ?= stable
 GLUON_AUTOUPDATER_ENABLED = 1
 
 # Which Version number do we have?
-GLUON_BASE_VERSION := 1.1.0
+GLUON_BASE_VERSION := 1.2.0
 
 # This string is displayed and used by the autoupdater to decide if a newer version is available.
 ifeq ($(GLUON_AUTOUPDATER_BRANCH),stable)
@@ -194,7 +194,7 @@ GLUON_DEBUG ?= 0
 
 # Controls whether images for deprecated devices (small flash) should be built
 # 0, upgrade, full
-GLUON_DEPRECATED ?= upgrade
+GLUON_DEPRECATED ?= 0
 
 # Multidomain support allows to build a single firmware with multiple, switchable domain configurations
 GLUON_MULTIDOMAIN=1
