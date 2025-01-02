@@ -1,31 +1,41 @@
+##	GLUON_FEATURES
+#		Specify Gluon features/packages to enable;
+#		Gluon will automatically enable a set of packages
+#		depending on the combination of features listed
+GLUON_FEATURES := \
+	autoupdater \
+	ebtables-filter-multicast \
+    ebtables-filter-ra-dhcp \
+    mesh-batman-adv-15 \
+	mesh-vpn-fastd \
+	radvd \
+    respondd \
+	status-page \
+	web-advanced \
+	web-wizard
+
+##	GLUON_SITE_PACKAGES
+#		Specify additional Gluon/OpenWrt packages to include here;
+#		A minus sign may be prepended to remove a packages from the
+#		selection that would be enabled by default or due to the
+#		chosen feature flags
 GLUON_SITE_PACKAGES := \
     gluon-mesh-batman-adv-15 \
     gluon-alfred \
-    gluon-respondd \
-    gluon-autoupdater \
-    gluon-config-mode-autoupdater \
     gluon-config-mode-contact-info \
-    gluon-config-mode-core \
     gluon-config-mode-geo-location \
     gluon-config-mode-hostname \
-    gluon-config-mode-mesh-vpn \
     gluon-config-mode-domain-select \
     gluon-scheduled-domain-switch \
-    gluon-ebtables-filter-multicast \
-    gluon-ebtables-filter-ra-dhcp \
-    gluon-web-admin \
-    gluon-web-autoupdater \
-    gluon-web-network \
-    gluon-web-wifi-config \
-    gluon-web-private-wifi \
     gluon-web-node-role  \
-    gluon-mesh-vpn-fastd \
     gluon-web-logging \
     gluon-setup-mode \
     gluon-status-page \
     respondd-module-airtime \
-    iwinfo \
-    iptables
+    iwinfo
+
+GLUON_FEATURES_standard := \
+  wireless-encryption-wpa3
 
 # basic support for USB stack
 USB_PACKAGES_BASIC := \
@@ -102,12 +112,11 @@ USB_X86_GENERIC_NETWORK_MODULES := \
 
 # AMD APU2 Offloader https://openwrt.org/toh/pcengines/apu2#kernel_modules
 APU2_SUPPORT := \
-    kmod-leds-apu2 \
     kmod-leds-gpio \
     kmod-crypto-hw-ccp \
     kmod-gpio-nct5104d \
     kmod-gpio-button-hotplug \
-    kmod-sp5100_tco \
+    kmod-sp5100-tco \
     kmod-usb-ohci \
     kmod-sound-core \
     kmod-pcspkr \
