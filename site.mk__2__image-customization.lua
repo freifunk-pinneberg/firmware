@@ -1,4 +1,3 @@
-
 features({
     'autoupdater',
     'config-mode-domain-select',
@@ -34,6 +33,10 @@ packages({
 })
 
 
+-- ###################
+-- custom PACKAGES dev
+-- ###################
+
 -- basic support for USB stack
 pkgs__usb_basic = {
     'kmod-usb-core',
@@ -41,7 +44,7 @@ pkgs__usb_basic = {
     'kmod-usb3',
 }
 
---
+-- support for USB UMTS/3G devices
 pkgs__usb_3G = {
     'kmod-usb-serial',
     'kmod-usb-serial-wwan',
@@ -49,6 +52,79 @@ pkgs__usb_3G = {
     'chat',
     'ppp',
 }
+
+-- support for USB GPS devices
+pkgs__usb_gps = {
+    'kmod-usb-acm',
+    'ugps',
+
+}
+
+-- support for HID devices (keyboard, mouse, ...)
+pkgs__usb_hid = {
+    'kmod-usb-hid',
+    'kmod-hid-generic',
+
+}
+
+-- storage support for USB devices
+pkgs__ = {
+
+
+}
+
+
+-- support for USB tetherings
+pkgs__usb_tetherings = {
+	'kmod-usb-net',
+	'kmod-usb-net-asix',
+	'kmod-usb-net-dm9601-ether',
+
+}
+
+
+--
+pkgs__ = {
+
+
+}
+
+
+--
+pkgs__ = {
+
+
+}
+
+
+--
+pkgs__ = {
+
+
+}
+
+
+--
+pkgs__ = {
+
+
+}
+
+
+--
+pkgs__ = {
+
+
+}
+
+
+--
+pkgs__ = {
+
+
+}
+
+
 
 
 
@@ -110,17 +186,17 @@ GLUON_SITE_PACKAGES := \
 --    chat \
 --    ppp
 
-# support for USB GPS devices
-USB_PACKAGES_GPS := \
-    kmod-usb-acm \
-    ugps
+--# support for USB GPS devices
+--USB_PACKAGES_GPS := \
+--    kmod-usb-acm \
+--    ugps
 
-# support for HID devices (keyboard, mouse, ...)
-USB_PACKAGES_HID := \
-    kmod-usb-hid \
-    kmod-hid-generic
+-- # support for HID devices (keyboard, mouse, ...)
+--USB_PACKAGES_HID := \
+--    kmod-usb-hid \
+--    kmod-hid-generic
 
-# storage support for USB devices
+-- # storage support for USB devices
 USB_PACKAGES_STORAGE := \
     block-mount \
     blkid \
@@ -143,11 +219,11 @@ USB_PACKAGES_STORAGE := \
     kmod-nls-utf8 \
     swap-utils
 
-# support for USB tethering
-USB_PACKAGES_TETHERING := \
-	kmod-usb-net \
-	kmod-usb-net-asix \
-	kmod-usb-net-dm9601-ether
+-- # support for USB tethering
+--USB_PACKAGES_TETHERING := \
+--	kmod-usb-net \
+--	kmod-usb-net-asix \
+--	kmod-usb-net-dm9601-ether
 
 USB_X86_GENERIC_NETWORK_MODULES := \
 	kmod-usb-ohci-pci \
