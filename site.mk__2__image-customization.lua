@@ -1,19 +1,77 @@
-<<<<<<< Updated upstream
+
+features({
+    'autoupdater',
+    'config-mode-domain-select',
+    'ebtables-filter-multicast',
+    'ebtables-filter-ra-dhcp',
+    'mesh-batman-adv-15',
+    'mesh-vpn-fastd',
+    'web-private-wifi',
+    'radvd',
+    'radv-filterd',
+    'respondd',
+    'status-page',
+    'web-advanced',
+    'web-wizard',
+})
+
+if not device_class('tiny') then
+    features({
+        'wireless-encryption-wpa3',
+    })
+end
+
+
+packages({
+    'gluon-config-mode-geo-location',
+    'gluon-config-mode-contact-info',
+    'gluon-ebtables-source-filter',
+    'gluon-web-mesh-vpn-fastd',
+    'respondd-module-airtime',
+    'iwinfo',
+    'iptables',
+    'haveged',
+})
+
+
+-- basic support for USB stack
+pkgs__usb_basic = {
+    'kmod-usb-core',
+    'kmod-usb2',
+    'kmod-usb3',
+}
+
+--
+pkgs__usb_3G = {
+    'kmod-usb-serial',
+    'kmod-usb-serial-wwan',
+    'kmod-usb-serial-option',
+    'chat',
+    'ppp',
+}
+
+
+
+
+
+-- ###########################
+-- alt: in lua zu konvertieren
+-- ###########################
 ##	GLUON_FEATURES
 #		Specify Gluon features/packages to enable;
 #		Gluon will automatically enable a set of packages
 #		depending on the combination of features listed
 GLUON_FEATURES := \
-	autoupdater \
-	ebtables-filter-multicast \
-    ebtables-filter-ra-dhcp \
-    mesh-batman-adv-15 \
-	mesh-vpn-fastd \
-	radvd \
-    respondd \
-	status-page \
-	web-advanced \
-	web-wizard
+--	autoupdater \
+--	ebtables-filter-multicast \
+--    ebtables-filter-ra-dhcp \
+--    mesh-batman-adv-15 \
+--	mesh-vpn-fastd \
+--	radvd \
+--    respondd \
+--	status-page \
+--	web-advanced \
+--	web-wizard
 
 ##	GLUON_SITE_PACKAGES
 #		Specify additional Gluon/OpenWrt packages to include here;
@@ -21,36 +79,36 @@ GLUON_FEATURES := \
 #		selection that would be enabled by default or due to the
 #		chosen feature flags
 GLUON_SITE_PACKAGES := \
-    gluon-mesh-batman-adv-15 \
+--    gluon-mesh-batman-adv-15 \
     gluon-alfred \
-    gluon-config-mode-contact-info \
-    gluon-config-mode-geo-location \
+--    gluon-config-mode-contact-info \
+--    gluon-config-mode-geo-location \
     gluon-config-mode-hostname \
-    gluon-config-mode-domain-select \
+--    gluon-config-mode-domain-select \
     gluon-scheduled-domain-switch \
     gluon-web-node-role  \
     gluon-web-logging \
     gluon-setup-mode \
-    gluon-status-page \
-    respondd-module-airtime \
-    iwinfo
+--    gluon-status-page \
+--    respondd-module-airtime \
+--    iwinfo
 
-GLUON_FEATURES_standard := \
-  wireless-encryption-wpa3
+--GLUON_FEATURES_standard := \
+--  wireless-encryption-wpa3
 
-# basic support for USB stack
-USB_PACKAGES_BASIC := \
-    kmod-usb-core \
-    kmod-usb2 \
-    kmod-usb3
+--# basic support for USB stack
+--USB_PACKAGES_BASIC := \
+--    kmod-usb-core \
+--    kmod-usb2 \
+--    kmod-usb3
 
-# support for USB UMTS/3G devices
-USB_PACKAGES_3G := \
-    kmod-usb-serial \
-    kmod-usb-serial-wwan \
-    kmod-usb-serial-option \
-    chat \
-    ppp
+--# support for USB UMTS/3G devices
+--USB_PACKAGES_3G := \
+--    kmod-usb-serial \
+--    kmod-usb-serial-wwan \
+--    kmod-usb-serial-option \
+--    chat \
+--    ppp
 
 # support for USB GPS devices
 USB_PACKAGES_GPS := \
@@ -166,47 +224,3 @@ endif
 
 =======
 >>>>>>> Stashed changes
-# Enable autoupdater
-GLUON_AUTOUPDATER_BRANCH ?= stable
-GLUON_AUTOUPDATER_ENABLED ?= 1
-
-# Which Version number do we have?
-GLUON_BASE_VERSION := 1.2.0
-
-# This string is displayed and used by the autoupdater to decide if a newer version is available.
-ifeq ($(GLUON_AUTOUPDATER_BRANCH),stable)
-    # Set DEFAULT_GLUON_RELEASE without date for stable branch
-    DEFAULT_GLUON_RELEASE := $(GLUON_BASE_VERSION)
-else ifeq ($(GLUON_AUTOUPDATER_BRANCH),beta)
-    # Beta version
-    DEFAULT_GLUON_RELEASE := $(GLUON_BASE_VERSION)-beta$(shell date '+%Y%m%d')
-else
-    # Set DEFAULT_GLUON_RELEASE with date for other branches
-    DEFAULT_GLUON_RELEASE := $(GLUON_BASE_VERSION)-exp$(shell date '+%Y%m%d')
-endif
-
-# Allow overriding the release number from the command line
-GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
-
-# How many days until all router should be updated
-GLUON_PRIORITY ?= 7
-
-# Some devices contain a region code that restricts firmware installations.
-# Set to eu or us to make the resulting images installable from the respective stock firmware.
-GLUON_REGION ?= eu
-
-# Setting this to 11s or ibss will enable generation of matching images for devices which don’t support both meshing modes
-GLUON_WLAN_MESH ?= 11s
-
-# List of languages (as two-letter-codes) to be included in the web interface
-GLUON_LANGS ?= en de
-
-# Setting this to 1 will provide firmware images including debugging symbols usable with GDB or similar tools.
-GLUON_DEBUG ?= 0
-
-# Controls whether images for deprecated devices (small flash) should be built
-# 0, upgrade, full
-GLUON_DEPRECATED ?= 0
-
-# Multidomain support allows to build a single firmware with multiple, switchable domain configurations
-GLUON_MULTIDOMAIN=1
