@@ -52,11 +52,32 @@ build.sh
 ```
 #!/bin/bash
 
+#BRANCH=experimental
+#BRANCH=beta
+BRANCH=stable
+
+GLUON_BASE_VERSION=1.0.0+1
+
+
+if [ "$BRANCH" == "stable" ]; then
+    # Setze DEFAULT_GLUON_RELEASE ohne Datum für den stabilen Branch
+    DEFAULT_GLUON_RELEASE="$GLUON_BASE_VERSION"
+elif [ "$BRANCH" == "beta" ]; then
+    # Beta-Version
+    DEFAULT_GLUON_RELEASE="${GLUON_BASE_VERSION}-beta$(date '+%Y%m%d')"
+else
+    # Setze DEFAULT_GLUON_RELEASE mit Datum für andere Branches
+    DEFAULT_GLUON_RELEASE="${GLUON_BASE_VERSION}-exp$(date '+%Y%m%d')"
+fi
+
+
 make update
 for TARGET in $(make list-targets); do
-  make -j10 GLUON_TARGET=$TARGET GLUON_BRANCH=stable
+  make -j10 GLUON_TARGET=$TARGET GLUON_BRANCH=$BRANCH GLUON_RELEASE=$DEFAULT_GLUON_RELEASE
   make clean GLUON_TARGET=$TARGET
 done 
 
-make manifest GLUON_BRANCH=stable
+make manifest GLUON_BRANCH=$BRANCH
+
+./contrib/sign.sh ../secret output/images/sysupgrade/$BRANCH.manifest 
 ```
