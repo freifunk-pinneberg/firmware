@@ -18,9 +18,9 @@ apt-get install build-essential git subversion python gawk unzip libssl-dev zlib
     git clone https://github.com/freifunk-gluon/gluon.git
     git clone https://github.com/freifunk-pinneberg/firmware.git gluon/site
     cd gluon/site
-    git checkout v0.11.2
+    git checkout v1.2.0
     cd ..
-    git checkout 250b623fb4a1bc2d6e0b91809385b8aaa1a4b5d5
+    git checkout v2022.1.4
 
 ### Firmware bauen
 
@@ -52,11 +52,55 @@ build.sh
 ```
 #!/bin/bash
 
+#BRANCH=experimental
+#BRANCH=beta
+BRANCH=stable
+
+GLUON_BASE_VERSION=1.0.0+1
+
+
+if [ "$BRANCH" == "stable" ]; then
+    # Setze DEFAULT_GLUON_RELEASE ohne Datum für den stabilen Branch
+    DEFAULT_GLUON_RELEASE="$GLUON_BASE_VERSION"
+elif [ "$BRANCH" == "beta" ]; then
+    # Beta-Version
+    DEFAULT_GLUON_RELEASE="${GLUON_BASE_VERSION}-beta$(date '+%Y%m%d')"
+else
+    # Setze DEFAULT_GLUON_RELEASE mit Datum für andere Branches
+    DEFAULT_GLUON_RELEASE="${GLUON_BASE_VERSION}-exp$(date '+%Y%m%d')"
+fi
+
+# Anzahl der PCU kerne bestimmen
+CPU_CORES=$(nproc)
+if [ "$CPU_CORES" -gt 1 ]; then
+    JOBS=$((CPU_CORES - 1))
+else
+    JOBS=1
+fi
+
 make update
-for TARGET in $(make list-targets); do
-  make -j10 GLUON_TARGET=$TARGET GLUON_BRANCH=stable
+
+TARGETS=($(make list-targets))
+TOTAL=${#TARGETS[@]}
+
+for i in "${!TARGETS[@]}"; do
+  TARGET=${TARGETS[$i]}
+  IDX=$((i + 1))
+  
+  echo "[$IDX/$TOTAL] Building target: $TARGET"
+  
+  if [ "$i" -gt 0 ]; then
+    # list already built targets
+    echo "  Bereits gebaut: ${TARGETS[@]:0:$i}"
+  else
+    echo "  Bereits gebaut: (none)"
+  fi
+  
+  make -j$JOBS GLUON_TARGET=$TARGET GLUON_BRANCH=$BRANCH GLUON_RELEASE=$DEFAULT_GLUON_RELEASE
   make clean GLUON_TARGET=$TARGET
 done 
 
-make manifest GLUON_BRANCH=stable
+make manifest GLUON_BRANCH=$BRANCH
+
+./contrib/sign.sh ../secret output/images/sysupgrade/$BRANCH.manifest 
 ```
