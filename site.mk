@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 ##	GLUON_FEATURES
 #		Specify Gluon features/packages to enable;
 #		Gluon will automatically enable a set of packages
@@ -164,8 +163,6 @@ GLUON_SITE_PACKAGES += \
     htop
 endif
 
-=======
->>>>>>> Stashed changes
 # Enable autoupdater
 GLUON_AUTOUPDATER_BRANCH ?= stable
 GLUON_AUTOUPDATER_ENABLED ?= 1
