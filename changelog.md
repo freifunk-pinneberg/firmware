@@ -1,5 +1,13 @@
+# 1.2.0 (gluon-v2022.1.4)
+* Update to Gluon 2022.1.4
+* small translation fixes
+
+# 1.1.0 (gluon-v2021.1.2)
 * Update to Gluon 2021.1.2
 * Remove ibss support
+* update opkg paths
+* remove gate01
+* small translation fixes
 
 # 1.0.2 (gluon-v2019.1.3-5-g250b623f)
 * Add Helgoland
