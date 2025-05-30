@@ -1,8 +1,19 @@
+# 1.2.0 (gluon-v2022.1.4)
+* Update to Gluon 2022.1.4
+* small translation fixes
+
+# 1.1.0 (gluon-v2021.1.2)
 * Update to Gluon 2021.1.2
 * Remove ibss support
+* update opkg paths
+* Removed Gateway 1
+* small translation fixes
 
 # 1.0.2 (gluon-v2019.1.3-5-g250b623f)
 * Add Helgoland
+* Removed Gateway 3 and 5
+* Added sign key for Entil'Zha
+* Fixed one update path
 
 # 1.0.1 (gluon-v2019.1.3-5-g250b623f)
 * set 802.11s as default

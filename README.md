@@ -70,10 +70,33 @@ else
     DEFAULT_GLUON_RELEASE="${GLUON_BASE_VERSION}-exp$(date '+%Y%m%d')"
 fi
 
+# Anzahl der PCU kerne bestimmen
+CPU_CORES=$(nproc)
+if [ "$CPU_CORES" -gt 1 ]; then
+    JOBS=$((CPU_CORES - 1))
+else
+    JOBS=1
+fi
 
 make update
-for TARGET in $(make list-targets); do
-  make -j10 GLUON_TARGET=$TARGET GLUON_BRANCH=$BRANCH GLUON_RELEASE=$DEFAULT_GLUON_RELEASE
+
+TARGETS=($(make list-targets))
+TOTAL=${#TARGETS[@]}
+
+for i in "${!TARGETS[@]}"; do
+  TARGET=${TARGETS[$i]}
+  IDX=$((i + 1))
+  
+  echo "[$IDX/$TOTAL] Building target: $TARGET"
+  
+  if [ "$i" -gt 0 ]; then
+    # list already built targets
+    echo "  Bereits gebaut: ${TARGETS[@]:0:$i}"
+  else
+    echo "  Bereits gebaut: (none)"
+  fi
+  
+  make -j$JOBS GLUON_TARGET=$TARGET GLUON_BRANCH=$BRANCH GLUON_RELEASE=$DEFAULT_GLUON_RELEASE
   make clean GLUON_TARGET=$TARGET
 done 
 
