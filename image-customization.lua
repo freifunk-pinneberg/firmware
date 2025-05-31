@@ -76,7 +76,7 @@ pkgs__usb_hid = {
 -- support for USB storage devices
 pkgs__usb_storage_dev = {
     'block-mount',
-    'blkid'
+    'blkid',
     'kmod-fs-ext4',
     'kmod-fs-vfat',
     'kmod-usb-storage',
@@ -206,8 +206,8 @@ end
 
 
 if  device({
-    'tp-link-archer-c7-v2'
-    'tp-link-archer-c7-v4'
+    'tp-link-archer-c7-v2',
+    'tp-link-archer-c7-v4',
     'tp-link-archer-c7-v5'
     }) then
     packages(pkgs_dev_tools)
@@ -215,10 +215,10 @@ if  device({
 end
 
 if  device({
-    'gl.inet-6416'
-    'gl.inet-gl-ar150'
-    'gl.inet-gl-ar300m-lite'
-    'gl.inet-gl-ar750'
+    'gl.inet-6416',
+    'gl.inet-gl-ar150',
+    'gl.inet-gl-ar300m-lite',
+    'gl.inet-gl-ar750',
     'gl.inet-gl-usb150'
     }) then
     packages(pkgs__usb_basic)
@@ -231,9 +231,9 @@ if  device({'tp-link-tl-wdr4300-v1'}) then
 end
 
 if  device({
-    'tp-link-tl-wr1043nd-v2'
-    'tp-link-tl-wr1043nd-v3'
-    'tp-link-tl-wr1043nd-v4'
+    'tp-link-tl-wr1043nd-v2',
+    'tp-link-tl-wr1043nd-v3',
+    'tp-link-tl-wr1043nd-v4',
     'tp-link-tl-wr1043n-v5'
     }) then
     packages(pkgs_dev_tools)
@@ -252,7 +252,7 @@ if  device({'tp-link-tl-wr842n-v3'}) then
 end
 
 if  device({
-    'netgear-wndr3700'
+    'netgear-wndr3700',
     'netgear-wndr3700-v2'
     }) then
     packages(pkgs_dev_tools)
