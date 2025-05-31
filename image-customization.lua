@@ -34,8 +34,6 @@ packages({
     'gluon-setup-mode',
     'respondd-module-airtime',
     'iwinfo',
-    'iptables',
-    'haveged',
 })
 
 
