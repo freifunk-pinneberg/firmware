@@ -28,7 +28,7 @@ packages({
     'gluon-config-mode-hostname',
     'gluon-ebtables-source-filter',
     'gluon-scheduled-domain-switch',
-    'gluon-web-mesh-vpn-fastd',
+--    'gluon-web-mesh-vpn-fastd',
     'gluon-web-node-role',
     'gluon-web-logging',
     'gluon-setup-mode',
