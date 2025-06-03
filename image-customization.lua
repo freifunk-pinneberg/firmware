@@ -20,7 +20,6 @@ if not device_class('tiny') then
     })
 end
 
-
 packages({
     'gluon-alfred',
     'gluon-config-mode-geo-location',
@@ -28,7 +27,7 @@ packages({
     'gluon-config-mode-hostname',
     'gluon-ebtables-source-filter',
     'gluon-scheduled-domain-switch',
---    'gluon-web-mesh-vpn-fastd',
+    --    'gluon-web-mesh-vpn-fastd',
     'gluon-web-node-role',
     'gluon-web-logging',
     'gluon-setup-mode',
@@ -140,20 +139,20 @@ pkgs__APU2_offloader = {
 
 -- support for ...
 pkgs__base_tools = {
-        'nano',
-        'htop',
+    'nano',
+    'htop',
 }
 
 pkgs_dev_tools = {
-        'nano',
-        'htop',
-        'ethtool',
-        'vnstat',
-        'iperf',
-        'iperf3',
-        'socat',
-        'nmap',
-        'tcpdump',
+    'nano',
+    'htop',
+    'ethtool',
+    'vnstat',
+    'iperf',
+    'iperf3',
+    'socat',
+    'nmap',
+    'tcpdump',
 }
 
 
@@ -182,83 +181,81 @@ if target('x86-64') then
     packages(pkgs_dev_tools)
 end
 
-if  device({'cudy-x6-v2'}) then
+if device({ 'cudy-x6-v2' }) then
     packages(pkgs_dev_tools)
     packages(pkgs__usb_basic)
 end
 
-if  device({'cudy-wr3000-v1'}) then
+if device({ 'cudy-wr3000-v1' }) then
     packages(pkgs_dev_tools)
     packages(pkgs__usb_basic)
 end
 
-if  device({'zyxel-nwa50ax'}) then
+if device({ 'zyxel-nwa50ax' }) then
     packages(pkgs_dev_tools)
     packages(pkgs__usb_basic)
 end
 
-if  device({'tp-link-tl-wdr4900-v1'}) then
+if device({ 'tp-link-tl-wdr4900-v1' }) then
     packages(pkgs_dev_tools)
     packages(pkgs__usb_basic)
 end
 
-
-if  device({
+if device({
     'tp-link-archer-c7-v2',
     'tp-link-archer-c7-v4',
     'tp-link-archer-c7-v5'
-    }) then
+}) then
     packages(pkgs_dev_tools)
     packages(pkgs__usb_basic)
 end
 
-if  device({
+if device({
     'gl.inet-6416',
     'gl.inet-gl-ar150',
     'gl.inet-gl-ar300m-lite',
     'gl.inet-gl-ar750',
     'gl.inet-gl-usb150'
-    }) then
+}) then
     packages(pkgs__usb_basic)
 end
 
-if  device({'tp-link-tl-wdr4300-v1'}) then
+if device({ 'tp-link-tl-wdr4300-v1' }) then
     packages(pkgs_dev_tools)
     packages(pkgs__usb_basic)
     packages(pkgs__usb_3G)
 end
 
-if  device({
+if device({
     'tp-link-tl-wr1043nd-v2',
     'tp-link-tl-wr1043nd-v3',
     'tp-link-tl-wr1043nd-v4',
     'tp-link-tl-wr1043n-v5'
-    }) then
+}) then
     packages(pkgs_dev_tools)
     packages(pkgs__usb_basic)
     packages(pkgs__usb_3G)
 end
 
-if  device({'tp-link-tl-wr2543n-nd'}) then
+if device({ 'tp-link-tl-wr2543n-nd' }) then
     packages(pkgs__usb_basic)
 end
 
-if  device({'tp-link-tl-wr842n-v3'}) then
+if device({ 'tp-link-tl-wr842n-v3' }) then
     packages(pkgs_dev_tools)
     packages(pkgs__usb_basic)
     packages(pkgs__usb_3G)
 end
 
-if  device({
-    'netgear-wndr3700',
-    'netgear-wndr3700-v2'
-    }) then
+if device({ 'netgear-wndr3700' }) then
+    packages(pkgs__usb_basic)
+end
+
+if device({ 'netgear-wndr3700-v2' }) then
     packages(pkgs_dev_tools)
     packages(pkgs__usb_basic)
 end
 
-if  device({'buffalo-wzr-hp-ag300h'}) then
+if device({ 'buffalo-wzr-hp-ag300h' }) then
     packages(pkgs__usb_basic)
 end
-
-
