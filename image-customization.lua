@@ -197,7 +197,7 @@ if device({ 'zyxel-nwa50ax' }) then
 end
 
 if device({ 'tp-link-tl-wdr4900-v1' }) then
-    packages(pkgs_dev_tools)
+    packages(pkgs__base_tools)
     packages(pkgs__usb_basic)
 end
 
@@ -220,8 +220,12 @@ if device({
     packages(pkgs__usb_basic)
 end
 
-if device({ 'tp-link-tl-wdr4300-v1' }) then
+if device({ 'gl.inet-gl-b1300' }) then
     packages(pkgs_dev_tools)
+end
+
+if device({ 'tp-link-tl-wdr4300-v1' }) then
+    packages(pkgs__base_tools)
     packages(pkgs__usb_basic)
     packages(pkgs__usb_3G)
 end
@@ -232,7 +236,7 @@ if device({
     'tp-link-tl-wr1043nd-v4',
     'tp-link-tl-wr1043n-v5'
 }) then
-    packages(pkgs_dev_tools)
+    packages(pkgs__base_tools)
     packages(pkgs__usb_basic)
     packages(pkgs__usb_3G)
 end
