@@ -143,7 +143,7 @@ pkgs__base_tools = {
     'htop',
 }
 
-pkgs_dev_tools = {
+pkgs__dev_tools = {
     'nano',
     'htop',
     'ethtool',
@@ -167,7 +167,7 @@ if target('x86-generic') then
     packages(pkgs__usb_storage_dev)
     packages(pkgs__usb_x86_gen_network_mod)
     packages(pkgs__usb_gps)
-    packages(pkgs_dev_tools)
+    packages(pkgs__dev_tools)
 end
 
 if target('x86-64') then
@@ -178,21 +178,21 @@ if target('x86-64') then
     packages(pkgs__usb_x86_gen_network_mod)
     packages(pkgs__usb_gps)
     packages(pkgs__APU2_offloader)
-    packages(pkgs_dev_tools)
+    packages(pkgs__dev_tools)
 end
 
 if device({ 'cudy-x6-v2' }) then
-    packages(pkgs_dev_tools)
+    packages(pkgs__dev_tools)
     packages(pkgs__usb_basic)
 end
 
 if device({ 'cudy-wr3000-v1' }) then
-    packages(pkgs_dev_tools)
+    packages(pkgs__dev_tools)
     packages(pkgs__usb_basic)
 end
 
 if device({ 'zyxel-nwa50ax' }) then
-    packages(pkgs_dev_tools)
+    packages(pkgs__dev_tools)
     packages(pkgs__usb_basic)
 end
 
@@ -206,7 +206,7 @@ if device({
     'tp-link-archer-c7-v4',
     'tp-link-archer-c7-v5'
 }) then
-    packages(pkgs_dev_tools)
+    packages(pkgs__dev_tools)
     packages(pkgs__usb_basic)
 end
 
@@ -221,7 +221,8 @@ if device({
 end
 
 if device({ 'gl.inet-gl-b1300' }) then
-    packages(pkgs_dev_tools)
+    packages(pkgs__dev_tools)
+    packages(pkgs__usb_basic)
 end
 
 if device({ 'tp-link-tl-wdr4300-v1' }) then
@@ -246,7 +247,7 @@ if device({ 'tp-link-tl-wr2543n-nd' }) then
 end
 
 if device({ 'tp-link-tl-wr842n-v3' }) then
-    packages(pkgs_dev_tools)
+    packages(pkgs__dev_tools)
     packages(pkgs__usb_basic)
     packages(pkgs__usb_3G)
 end
@@ -256,7 +257,7 @@ if device({ 'netgear-wndr3700' }) then
 end
 
 if device({ 'netgear-wndr3700-v2' }) then
-    packages(pkgs_dev_tools)
+    packages(pkgs__dev_tools)
     packages(pkgs__usb_basic)
 end
 
