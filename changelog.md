@@ -1,3 +1,7 @@
+# 1.3.0
+* Add Link to registration form
+* Update to Gluon 2023
+
 # 1.2.0 (gluon-v2022.1.4)
 * Update to Gluon 2022.1.4
 * small translation fixes
