@@ -162,7 +162,7 @@ pkgs__dev_tools = {
 -- add packages to targets or devices
 -- ##################################
 
-if target('x86-generic') then
+if target('x86') then
     packages(pkgs__usb_hid)
     packages(pkgs__usb_basic)
     packages(pkgs__usb_3G)
@@ -172,7 +172,7 @@ if target('x86-generic') then
     packages(pkgs__dev_tools)
 end
 
-if target('x86-64') then
+if target('x86', '64') then
     packages(pkgs__usb_hid)
     packages(pkgs__usb_basic)
     packages(pkgs__usb_3G)
