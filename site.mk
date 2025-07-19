@@ -4,7 +4,7 @@ GLUON_AUTOUPDATER_BRANCH ?= stable
 GLUON_AUTOUPDATER_ENABLED ?= 1
 
 # Which Version number do we have?
-GLUON_BASE_VERSION := 1.2.0
+GLUON_BASE_VERSION := 1.3.0
 
 # This string is displayed and used by the autoupdater to decide if a newer version is available.
 ifeq ($(GLUON_AUTOUPDATER_BRANCH),stable)

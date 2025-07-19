@@ -1,6 +1,8 @@
 # 1.3.0
+* add web config for mobile uplinks
+* add support for ssl/tls
 * Add Link to registration form
-* Update to Gluon 2023
+* Update to Gluon 2023.2.5
 
 # 1.2.0 (gluon-v2022.1.4)
 * Update to Gluon 2022.1.4
