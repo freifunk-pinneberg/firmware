@@ -1,6 +1,8 @@
 # 1.3.0
+* add openwrt Mirror for opkg
 * add web config for mobile uplinks
 * add support for ssl/tls
+* add ipv6 DNS Cache
 * Add Link to registration form
 * Update to Gluon 2023.2.5
 
