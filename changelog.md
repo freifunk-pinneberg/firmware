@@ -1,4 +1,4 @@
-# 1.3.0
+# 1.3.0 (gluon-v2023.2.5)
 * add openwrt Mirror for opkg
 * add web config for mobile uplinks
 * add support for ssl/tls
