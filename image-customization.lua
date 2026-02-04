@@ -104,15 +104,14 @@ pkgs__usb_tetherings = {
 }
 
 -- support for X86 USB generic Network Modules
-pkgs__usb_x86_gen_network_mod = {
+-- Common x86 Network Modules (Legacy/PCI) - Working on Geode & 64-Bit
+pkgs__x86_network_common = {
     'kmod-usb-ohci-pci',
     'kmod-sky2',
     'kmod-atl2',
-    'kmod-igb',
     'kmod-3c59x',
     'kmod-e100',
     'kmod-e1000',
-    'kmod-e1000e',
     'kmod-natsemi',
     'kmod-ne2k-pci',
     'kmod-pcnet32',
@@ -123,6 +122,12 @@ pkgs__usb_x86_gen_network_mod = {
     'kmod-via-rhine',
     'kmod-via-velocity',
     'kmod-forcedeth',
+}
+
+-- Modern PCIe Network Modules - don't work on old 32-Bit Geode
+pkgs__x86_network_pcie = {
+    'kmod-e1000e',
+    'kmod-igb',
 }
 
 -- support for AMD APU2 Offloader
@@ -167,7 +172,7 @@ if target('x86') then
     packages(pkgs__usb_basic)
     packages(pkgs__usb_3G)
     packages(pkgs__usb_storage_dev)
-    packages(pkgs__usb_x86_gen_network_mod)
+    packages(pkgs__x86_network_common) -- without e1000e/igb
     packages(pkgs__usb_gps)
     packages(pkgs__dev_tools)
 end
@@ -177,7 +182,8 @@ if target('x86', '64') then
     packages(pkgs__usb_basic)
     packages(pkgs__usb_3G)
     packages(pkgs__usb_storage_dev)
-    packages(pkgs__usb_x86_gen_network_mod)
+    packages(pkgs__x86_network_common)
+    packages(pkgs__x86_network_pcie)   -- including e1000e/igb
     packages(pkgs__usb_gps)
     packages(pkgs__APU2_offloader)
     packages(pkgs__dev_tools)
